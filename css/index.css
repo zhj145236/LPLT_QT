@@ -1,0 +1,663 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background: #e6e7e7;
+	overflow-x: hidden;
+}
+.footer-tabe{
+	display: flex;
+	flex-direction:row;
+	justify-content:space-around;
+	height: 50px;
+	line-height: 50px;
+	border-top: 1px solid #dedede;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #FFFFFF;
+}
+
+/* 单页面应用设置样式 */
+.choose-current,.tbl-active{
+	color: #FF9800;
+}
+.footer-tabe li{
+	cursor:pointer;
+}
+
+/*====================================================== 首页样式====================================== */
+/* .top-nave{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #FFFFFF;
+	background: #4D707A;
+	border-bottom: 4px solid #dedede;
+	font-weight: 600;
+} */
+/* banner图样式 */
+.contend-home-page-img{
+	width: 100%;
+	height: 160px;
+	overflow: hidden;
+}
+.contend-home-page-img img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* 中间三个按钮的链接 */
+.store-notice{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-around;  
+	padding: 20px 0;
+	border-top: 8px solid #dedede;
+	border-bottom: 8px solid #dedede;
+	background: #FFFFFF;
+}
+.store-notice-img,.group-details-img,.my-info-img{
+	width: 30%;
+	display: inline-block;
+	vertical-align: middle;
+}
+.store-notice-img img,.group-details-img img,.my-info-img img{
+	display: block;
+	width: 100%;
+}
+.store-notice-title p,.group-details p,.my-info p{
+	margin-top: 10px;
+}
+.store-notice-title,.group-details,.my-info{
+	cursor:pointer;
+}
+
+/* 门店简介 */
+.contend-abstract{
+	padding: 20px 10px;
+	background: #FFFFFF;
+	/* margin-top: 20px; */
+	/* border-top: 1px solid #dedede; */
+	border-bottom: 1px solid #dedede;
+}
+.contend-abstract-title{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-between;
+	align-items:center;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #dedede;
+}
+.store-abstract{
+	margin-left: 10px;
+}
+.store-details{
+	color: #A7A7A7;
+}
+.contend-abstract-title-info img{
+	width: 60px;
+	height: 60px;
+	display: block;
+	border-radius: 50%;
+	border: 1px solid #dedede;
+}
+.contend-abstract-title-info{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-between;
+	align-items:center;
+}
+.store-img{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	align-items:center;
+}
+.store-img-box{
+	width: 48%;
+	margin-top: 4%;
+	height: 100px;
+	border: 1px solid #DEDEDE;
+	overflow: hidden;
+}
+.store-img-box img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+/* 我们的门店 */
+.contend-our-store{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-between;
+	align-items:center;
+	padding:10px;
+	margin-top: 20px;
+	background: #FFFFFF;
+	border-bottom: 4px solid #dedede;
+}
+.contend-our-store-left{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-between;
+	align-items:center;
+}
+.contend-our-store-left img{
+	display: block;
+	width: 24px;
+}
+.contend-our-store-left p{
+	margin-left: 10px;
+}
+/* 隐藏的门店 */
+.hide-store{
+	padding: 0 10px;
+	background: #FFFFFF;
+	display:none;
+}
+.hide-store li{
+	text-align: left;
+	padding: 10px 0;
+	border-bottom: 1px solid #dedede;
+	padding-left: 20px;
+}
+.fill-footer{
+	height: 60px;
+	width: 100%;
+}
+
+/*========================================== 活动中心 ==============================*/
+.activity-center{
+	background: #FFFFFF;
+	width: 90%;
+	margin: 10px auto;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.activity-img{
+	width: 100%;
+	height: 180px;
+	overflow: hidden;	
+	display: inline-block;
+	vertical-align: middle;
+	border-bottom: 4px solid #dedede;
+}
+.activity-img img{
+	display: block;
+	width: 100%;
+}
+.activity-title{
+	padding: 10px;
+}
+.activity-title li{
+	text-align: left;
+	font-size: 14px;
+}
+.activity-main{
+	font-weight: 600;
+}
+.activity-vice{
+	color: #dedede;
+	margin-top: 5px;
+}
+
+/*========================================= 立即预约 ========================*/
+.make-week{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-around;
+	align-items:center;
+	background: #FFFFFF;
+	padding: 10px 0;
+	border: 1px solid #dedede;
+	width: 100%;
+}
+.class-chose{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-around;
+	align-items:center;
+}
+.class-chose p{
+	cursor:pointer;
+}
+#private-class{
+	margin-left: 10px;
+}
+.chose-store{
+	appearance:none;
+	-moz-appearance:none; /* Firefox */
+	-webkit-appearance:none; /* Safari 和 Chrome */
+	/* 去掉边框 */
+	border: 0;
+	display: block;
+	position: relative;
+}
+.calendar-icon{
+	width: 30px;
+	height: 30px;
+	position: relative;
+}
+.calendar-icon img{
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+/* 预约团课样式 */
+.current-make{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-around;
+	align-items:center;
+	background: #FFFFFF;
+	padding: 10px 0;
+	margin-top: 6px;
+	border-top: 1px solid #dedede;
+	border-bottom: 1px solid #dedede;
+}
+.current-info{
+	font-size: 12px;
+	width: 46%;
+}
+.current-info p{
+	text-align: left;
+}
+.current-info-name{
+	margin: 10px 0;
+}
+.current-img{
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	border-radius: 5px;
+	background: #FFFFFF;
+	border: 1px solid #dedede;
+}
+.current-img img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.make-info-btn{
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	background: #4D707A;
+	color: #FFFFFF;
+	text-align: center;
+}
+.make-info-num{
+	font-size: 14px;
+	color: #dedede;
+	margin-top: 10px;
+}
+
+/* 私课预约 */
+.private-info,.private-make{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-around;
+	align-items:center;
+}
+.private-make{
+	background: #FFFFFF;
+	padding: 10px 0;
+	margin-top: 6px;
+	border-top: 1px solid #dedede;
+	border-bottom: 4px solid #dedede;
+}
+.private-info-img{
+	width: 60px;
+	height: 60px;
+	overflow: hideen;
+	border-radius: 5px;
+	background: #FFFFFF;
+	border: 1px solid #dedede;
+}
+.private-info-img img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.make-btn{
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	color: #4D707A;
+	text-align: center;
+	border: 1px solid #4D707A;
+}
+.private-info > p{
+	font-size: 12px;
+	margin-left: 10px;
+}
+.private-lessons-count,.private-lessons-count-box-left{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-between;
+	align-items:center;
+}
+.private-lessons-count{
+	width: 80%;
+	margin:auto;
+}
+.private-lessons-info-ul{
+	background: #FFFFFF;
+	padding: 5px 0;
+	border-bottom: 1px solid #dedede;
+}
+.private-lessons-count-img{
+	width: 44px;
+	height: 44px;
+	overflow: hidden;
+	border-radius:50%;
+	background: #FFFFFF;
+	border: 1px solid #dedede;
+}
+.private-lessons-count-desc{
+	font-size: 12px;
+	margin-left: 20px;
+}
+.private-lessons-count-desc p{
+	text-align: left;
+}
+.private-lessons-count-img img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.private-lessons-count-time{
+	color: #dedede;
+}
+.private-lessons-count-btn{
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	background: #4D707A;
+	color: #FFFFFF;
+	text-align: center;
+}
+.private-lessons-info{
+	display: none;
+}
+
+/* 底部弹出层样式 */
+.am-share {
+  font-size: 14px;
+  border-radius: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  width: 100%;
+  z-index: 1110;
+}
+
+.am-modal-active {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.am-modal-out {
+  z-index: 1109;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.am-share-title {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #fff;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  color: #555;
+  font-weight: 400;
+  margin: 0 10px;
+  padding: 10px 0 0;
+  text-align: center;
+}
+
+.am-share-title::after {
+  border-bottom: 1px solid #dfdfdf;
+  content: "";
+  display: block;
+  height: 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.am-share-footer {
+  margin: 10px;
+  display: flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-direction:row;
+}
+
+.am-share-footer .share_btn {
+  color: #555;
+  display: block;
+  width: 48%;
+  background-color: #e6e6e6;
+  border: 1px solid #e6e6e6;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 0.625em 0;
+  text-align: center;
+  transition: background-color 300ms ease-out 0s, border-color 300ms ease-out 0s;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-family: "微软雅黑";
+}
+
+.am-share-sns {
+  background-color: #f8f8f8;
+  border-radius: 0 0 2px 2px;
+  margin: 0 10px;
+  /* padding-top: 15px; */
+  height: auto;
+  zoom: 1;
+  overflow: auto;
+}
+
+.am-share-sns li {
+  display: block;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  width: 25%;
+  border: 1px solid #DEDEDE;
+}
+
+.am-share-sns p {
+  display: block;
+  border: 1px solid #dedede;
+  height: 40px;
+  line-height: 40px;
+}
+
+/* 遮罩层 */
+.sharebg {
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1100;
+  display: none;
+}
+
+.sharebg-active {
+  opacity: 1;
+  display: block;
+}
+.change-active{
+	background: #4D707A;
+	color: #FFFFFF;
+}
+.sure_btn{
+	display: block;
+	width: 48%;
+	background: #FF9800;
+	border: 1px solid #FF9800;
+	border-radius: 0;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.2;
+	padding: 0.625em 0;
+	text-align: center;
+	transition: background-color 300ms ease-out 0s, border-color 300ms ease-out 0s;
+	vertical-align: middle;
+	white-space: nowrap;
+	font-family: "微软雅黑";
+	color:#FFFFFF;
+}
+
+/*========================================= 个人中心 =================================*/
+.personal-center-box{
+	position: relative;
+}
+.personal-center{
+	width: 100%;
+	height: 160px;
+	background-image: url(../img/yjbj3.jpeg);
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	-moz-background-size:100% 100%;
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
+}
+.personal-center-top{
+	position: absolute;
+	width: 50%;
+	height: 100px;
+	background: #FFFFFF;
+	top: 90px;
+	left:50%;
+	z-index: 1;
+	margin-left: -25%;
+	border: 1px solid #DEDEDE;
+}
+.personal-center-top p{
+	margin-top: 14px;
+	font-size: 14px;
+	font-weight: 600;
+}
+.personal-center-top-img{
+	width: 80px;
+	height: 80px;
+	background: #DEDEDE;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:-40px;
+	border: 2px solid #DEDEDE;
+}
+.personal-center-top-img img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.personal-center-info{
+	margin-top: 40px;
+	padding: 0 10px;
+	background: #FFFFFF;
+	border-top: 4px solid #DEDEDE;
+}
+.personal-center-info li{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-between;
+	align-items:center;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #DEDEDE;
+}
+.personal-center-img{
+	width: 26px;
+	height: 26px;
+	overflow: hidden;
+}
+.personal-center-img img{
+	display: block;
+	width: 100%;
+}
+.exit{
+	display: block;
+	width: 90%;
+	background: #FF9800;
+	height: 50px;
+	line-height: 50px;
+	margin:20px auto 0 auto;
+	color: #FFFFFF;
+	border-radius: 5px;
+}
+/* 日历插件样式 */
+.form-control{
+	width: 26px;
+	height: 26px;
+	opacity:0;
+}
+.modal-dialog{
+	background-color: #FFFFFF;
+	width: 90%!important;
+	margin-top: 50%;
+	border-radius: 5px;
+}
+.btn-default{
+	width: 100%;
+}
+.modal-title{
+	color: red;
+	font-weight: 600;
+}
+.am-share-title{
+	font-size: 14px;
+}
+.show-data{
+	display: none;
+}
+.personal-center-top-img > span{
+	display: block;
+	height: 80px;
+	width: 80px;
+	line-height: 80px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 600;
+}

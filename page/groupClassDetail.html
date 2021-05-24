@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>课程详情</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/groupClassDetail.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+</head>
+<body>
+	<!-- 顶部 -->
+	<!-- <ul class="class-detail-top">
+		<li class="class-detail-top-img"><img src="../img/jt.png" /></li>
+		<li class="class-detail-top-text">课程详情</li>
+	</ul> -->
+	<!-- 课程信息 -->
+	<ul class="class-info">
+		<li class="class-info-title"></li>
+		<li class="class-info-time"></li>
+		<li class="class-info-add"></li>
+	</ul>
+	<!-- 课程图片 -->
+	<div class="class-img">
+		<p class="class-img-title">课程图片</p>
+		<ul class="class-img-content">
+			<li class="class-img-box"><img src="" /></li>
+		</ul>
+	</div>
+	<!-- 课程简介 -->
+	<div class="class-Introduction">
+		<p class="class-Introduction-title">课程简介</p>
+		<ul class="class-Introduction-box">
+			<li></li>
+		</ul>
+	</div>
+	<!-- 立即预约 -->
+	<div style="height: 50px;width: 100%;"></div>
+	<button class="immediately-make">立即预约</button>
+</body>
+<script>
+	$(document).ready(function(){
+		let storeUrl = window.location.href,
+		storeData = JSON.parse(localStorage.getItem("userData")), // 获取用户登录数据
+		memberToken = "",
+		needUrl = storeUrl.split('?')[1],
+		weekId = "",
+		url = 'course/teamCourse/applyCourse';
+		u = getUrl();
+		if(needUrl != undefined){
+			weekId = needUrl.split('=')[1]; // 课程id
+			console.log(weekId,'课程id');
+		}else{
+			$(window).attr('location','/page/storeChose.html');
+		}
+		$.post(u+'course/teamCourse/get',{id:weekId},function(res){
+			let weekInfo = res.data;
+			$('.class-info-title').append('课程名称：'+weekInfo.courseName);
+			$('.class-info-time').append('时间：'+weekInfo.teachDate + ' '+ weekInfo.starttime + ' '+ weekInfo.endtime);
+			$('.class-info-add').append('训练场地：'+weekInfo.place);
+			$('.class-img-box > img').attr('src', u + weekInfo.descImage);
+			$('.class-Introduction-box > li').append(weekInfo.desc);
+			console.log(res);
+		});
+		$('.class-detail-top-img').click(function(){
+			javascript:history.back(-1);
+		});
+		// 团课预约函数封装
+		function groupClassFun(urlData,tokenParameter,idParameter){
+			$.ajax({
+				// 请求头信息
+				headers:{
+					"Accept": "application/json",
+					"memberToken":tokenParameter
+				},
+				// 请求方式
+				type:"POST",
+				// 请求属于同步还是异步
+				async:false,
+				// 预期服务器返回的数据类型，如果不指定，jQuery会根据响应包自动判断，一般我们直接设定为json
+				dataType:'json',
+				url:u + urlData,
+				contentType : "application/x-www-form-urlencoded",
+				data:{
+					courseId:idParameter,
+					holdCount:1
+				},
+				success:function (res) {
+					console.log(res);
+					if(res.success){
+						//console.log(res,'报名成功');
+						alert(res.msg);
+						javascript:history.go(-1);
+					}else{
+						//console.log(res,'无法预约');
+						alert(res.msg);
+						javascript:history.back(-1);
+					}
+				},
+				error:function(err) {
+					console.log(err,'失败返回');
+				},
+			});
+		}
+		// 点击立即预约调用预约接口
+		$('.immediately-make').click(function(){
+			console.log(storeData,'数据中心');
+			if(storeData != null){
+				memberToken = storeData.map.memberToken; // 会员唯一识别码
+				groupClassFun(url,memberToken,weekId);
+			}else{
+				alert('请登录');
+				$(window).attr('location','/page/login.html');
+			}
+		});
+		keyboardEvents();
+	});	
+</script>
+</html>

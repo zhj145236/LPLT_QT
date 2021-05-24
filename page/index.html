@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>旅·普拉提</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/index.css" rel="stylesheet" type="text/css" />
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript" src="../js/rolldate.min.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+</head>
+<body>
+	<!-- 内容部分 -->
+	<ul class="contend">
+		<!-- 首页 -->
+		<li>
+			<div class="contend-home-page">
+				<!-- <div class="top-nave">旅·普拉提-首页</div> -->
+				<!-- 顶部banner -->
+				<div class="contend-home-page-img">
+					<img src="../img/banner.png" />
+				</div>
+				
+				<!-- 中间链接 -->
+				<div class="store-notice">
+					<!-- 门店公告 -->
+					<div class="store-notice-title">
+						<div class="store-notice-img"><img src="../img/notice.png" /></div>
+						<p>门店公告</p>
+					</div>
+					<!-- 教练详情 -->
+					<div class="group-details">
+						<div class="group-details-img"><img src="../img/detail.png" /></div>
+						<p>教练详情</p>
+					</div>
+					<!-- 我的信息 -->
+					<div class="my-info">
+						<div class="my-info-img"><img src="../img/info.png" /></div>
+						<p>我的信息</p>
+					</div>
+				</div>
+				
+				<!-- 门店简介部分 -->
+				<div class="contend-abstract">
+					<div class="contend-abstract-title">
+						<div class="contend-abstract-title-info">
+							<img src="" />
+							<p class="store-abstract"></p>
+						</div>
+						<p class="store-details">查看详情</p>
+					</div>
+					<div class="store-img"></div>
+				</div>
+				
+				<!-- 我们的门店 -->
+				<div class="contend-our-store">
+					<div class="contend-our-store-left">
+						<img src="../img/store.png" />
+						<p>我们的门店</p>
+					</div>
+					<div class="contend-our-store-num"></div>
+				</div>
+				<ul class="hide-store"></ul>
+			</div>
+		</li>
+		<!-- 活动中心 -->
+		<li>
+			<div class="top-nave">活动中心</div>
+			<div class="activity-center">
+				<div class="activity-img">
+					<img src="../img/yjbj3.jpeg" />
+				</div>
+				<ul class="activity-title">
+					<li class="activity-main">活动主标题</li>
+					<li class="activity-vice">活动副标题</li>
+				</ul>
+			</div>
+			<div class="activity-center">
+				<div class="activity-img">
+					<img src="../img/yjbj3.jpeg" />
+				</div>
+				<ul class="activity-title">
+					<li class="activity-main">活动主标题</li>
+					<li class="activity-vice">活动副标题</li>
+				</ul>
+			</div>
+		</li>
+		<!-- 立即预约 -->
+		<li>
+			<!-- <div class="top-nave">立即预约</div> -->
+			<!-- 立即预约顶部 -->
+			<ul class="make-week">
+				<li id="pickdate" class="calendar-icon">
+					<img src="../img/calendar.png" />
+					<input readonly class="form-control" type="text" id="date-group8-1" placeholder="不能小于当前的日期">
+				</li>
+				<li class="class-chose">
+					<p id="group-class" class="choose-current">团课</p>
+					<p id="private-class">私教</p>
+				</li>
+				<li class="chose-store-select"></li>
+				<!-- <li class="chose-store-select">
+					<select class="chose-store">
+						<option value="">南城店</option>
+						<option value="">虎门店</option>
+						<option value="">东城店</option>
+					</select>
+				</li> -->
+			</ul>
+			
+			<!-- 预约内容->团课预约 -->
+			<div class="current-make-out"></div>
+			<!-- 底部弹出数据 -->
+			<div class="am-share">
+			  <h3 class="am-share-title"></h3>
+			  <ul class="am-share-sns"></ul>
+			  <div class="am-share-footer">
+				  <button class="sure_btn">确定预约</button>
+				  <button class="share_btn">取消</button>
+			  </div>
+			</div>
+			
+			<!-- 模态框 -->
+			<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div> -->
+		</li>
+		<!-- 个人中心 -->
+		<li>
+			<div class="top-nave">个人中心</div>
+			<div class="personal-center-box">
+				<div class="personal-center"></div>
+				<div class="personal-center-top">
+					<div class="personal-center-top-img"><span>未登录</span><img src="" /></div>
+					<p></p>
+				</div>
+			</div>
+			<ul class="personal-center-info">
+				<li data-id="info">
+					<p>我的信息</p>
+					<div class="personal-center-img"><img src="../img/jt2.png" /></div>
+				</li>
+				<li data-id="notice">
+					<p>门店公告</p>
+					<div class="personal-center-img"><img src="../img/jt2.png" /></div>
+				</li>
+				<li data-id="about-us">
+					<p>关于我们</p>
+					<div class="personal-center-img"><img src="../img/jt2.png" /></div>
+				</li>
+				<li data-id="make-record">
+					<p>我的预约记录</p>
+					<div class="personal-center-img"><img src="../img/jt2.png" /></div>
+				</li>
+			</ul>
+			<button class="exit">退出</button>
+		</li>
+	</ul>
+	<!-- 底部 -->
+	<div class="fill-footer"></div>
+	<ul class="footer-tabe">
+		<li class="tbl-active">首页</li>
+		<li>活动中心</li>
+		<li>立即预约</li>
+		<li>个人中心</li>
+	</ul>
+</body>
+<script>
+	let choseData = "",
+	u = getUrl(),
+	storeUrl = window.location.href,
+	needUrl = storeUrl.split('?')[1],
+	needUrlData="",
+	storeId="",
+	storesname = "",
+	storeData = JSON.parse(localStorage.getItem("userData")), // 获取用户登录数据
+	memberTokens = "";
+	if(needUrl != undefined){
+		needUrlData = needUrl.split('&'), // 获取路径中需要的数据
+		storeId = needUrlData[0].split('=')[1], // 门店id
+		storesname = decodeURI(needUrlData[1].split('=')[1]); // 门店名称;
+	}else{
+		$(window).attr('location','/page/storeChose.html');
+	}
+	// 获取数据封装
+	function getClassData(url,sendTime,joinData,targetData,determineType){
+		// url 需要读取的接口, joinData 拼接的数据html, targetData 存放的目标节点, determineType 判断课程类型（团课、私课）
+		if(determineType == "0"){
+			$.post(u+url,{
+				selectDate:sendTime,
+				storeId:storeId
+			},function(res){
+				let dataArr = res.page.rows;
+				console.log(res,'111');
+				if(res.success && dataArr != null){
+					for(let i in dataArr){
+						let makeNum = dataArr[i].maxStudent - dataArr[i].hasApplyCount;
+						console.log(dataArr[i]);
+						console.log(makeNum);
+						console.log(!dataArr[i].notOver);
+						joinData += '<ul class="current-make">';
+						joinData += '<li class="current-img"><img src="'+ u + dataArr[i].descImage + '" /></li>';
+						joinData += '<li class="current-info">';
+						joinData += '<p>课程时间：' + dataArr[i].starttime + '-' + dataArr[i].endtime + '</p>';
+						joinData += '<p class="current-info-name">课程名称：' + dataArr[i].coachName + '</p>';
+						joinData += '<p>场地名称：' + dataArr[i].place + '</p>';
+						joinData += '</li>';
+						joinData += '<li class="make-info">';
+						joinData += '<p class="make-info-btn" week-id="'+ dataArr[i].id +'">查看详情</p>';
+						if(makeNum > 0 && !dataArr[i].canApply){
+							joinData += '<p class="make-info-num">还可报名' + makeNum + '人</p>';
+						}else if(makeNum == 0 && dataArr[i].canApply){
+							joinData += '<p class="make-info-num">人员已满</p>';
+						}
+						joinData += '</li></ul>';
+						$(targetData).html(joinData);
+					}
+				}else{
+					$(targetData).html('暂无课程数据');
+				}
+				
+			});
+		}else if(determineType == "1"){
+			$.post(u+url,{
+				dateStr:sendTime,
+				storeId:storeId
+			},function(res){
+				console.log(res,'222');
+				let dataArr = res.data;
+				if(res.success && dataArr.length != 0){
+					for(let i in dataArr){
+						let itemsArr = dataArr[i].items;
+						// console.log(dataArr[i]);
+						joinData += '<li>';
+						joinData += '<ul class="private-make">';
+						joinData += '<li class="private-info">';
+						joinData += '<div class="private-info-img">';
+						joinData += '<img src="' + u + dataArr[i].headpic + '" /></div>';
+						joinData += '<p>教练名称：'+ dataArr[i].name +'</p></li>';
+						joinData += '<li class="make-btn">课程详情</li></ul>';
+						joinData += '<div class="show-data">';
+						for(let s in itemsArr){
+							// console.log(itemsArr[s],'123');
+							joinData += '<ul class="private-lessons-info-ul">';
+							joinData += '<li class="private-lessons-count">';
+							joinData += '<div class="private-lessons-count-box">';
+							joinData += '<div class="private-lessons-count-box-left">';
+							joinData += '<div class="private-lessons-count-img"><img src="'+ u + itemsArr[s].logo +'" /></div>';
+							joinData += '<div class="private-lessons-count-desc">';
+							joinData += '<p>'+ itemsArr[s].courseName +'</p>';
+							joinData += '<p class="private-lessons-count-time">'+ itemsArr[s].duration +'min</p>';
+							joinData += '</div></div></div>';
+							joinData += '<p class="private-lessons-count-btn" course-id="'+ itemsArr[s].id +'">预约</p>';
+							joinData += '</li></ul>';
+						}
+						joinData += '</div>';
+						joinData += '</li>';
+						$(targetData).html(joinData);
+					}
+				}else{
+					$(targetData).html('该门店暂未添加教练');
+				}
+			});
+		}
+	}
+	
+	// 私课预约函数封装
+	function privateClassFun(urlData,tokenParameter,idParameter,dayParameter,ev){
+		$.ajax({
+			// 请求头信息
+			headers:{
+				"Accept": "application/json",
+				"memberToken":tokenParameter
+			},
+			// 请求方式
+			type:"POST",
+			// 请求属于同步还是异步
+			async:false,
+			// 预期服务器返回的数据类型，如果不指定，jQuery会根据响应包自动判断，一般我们直接设定为json
+			dataType:'json',
+			url:u + urlData,
+			contentType : "application/x-www-form-urlencoded",
+			data:{
+				courseId:idParameter,
+				datetime:dayParameter
+			},
+			success:function (res) {
+				console.log(res);
+				if(res.success){
+					//console.log(ev,'123');
+					//ev.stopPropagation();
+					alert(res.msg);
+					//window.location.reload();//当前页面刷新
+				}else{
+					//console.log(ev,'234');
+					//ev.stopPropagation();
+					alert(res.msg);
+					//window.location.reload();//当前页面刷新
+				}
+			},
+			error:function(err) {
+				console.log(err,'失败返回');
+			},
+		});
+	}
+	//日期判断
+	new Rolldate({
+		el: '#date-group8-1',
+		format: 'YYYY-MM-DD',
+		beginYear: 1986,
+		endYear: 2100,
+		confirm: function(date) {
+			var d = new Date(),
+				d1 = new Date(date.replace(/\-/g, "\/")),
+				d2 = new Date(d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate()), //如果非'YYYY-MM-DD'格式，需要另做调整
+				showInfo="";
+			if (d1 < d2) {
+				//showInfo += '<div class="modal-dialog">';
+				//showInfo += '<div class="modal-header">';
+				//showInfo += '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+				//showInfo += '<h4 class="modal-title" id="myModalLabel">错误提示</h4></div>';
+				//showInfo += '<div class="modal-body">所选日期不能小于今天日期</div>';
+				//showInfo += '<div class="modal-footer">';
+				//showInfo += '<button type="button" class="btn btn-default" data-dismiss="modal">重新选取日期</button>';
+				//$('#myModal').html(showInfo);
+				alert('不能小于当前的日期');
+				return false;
+			}else{
+				choseData = date;
+			}
+			if($(".class-chose > p").eq(0).attr('class') == "choose-current"){
+				let classData = "";
+				getClassData('course/teamCourse/getTeamCourseByDay',date,classData,'.current-make-out',"0");
+			}else if($(".class-chose > p").eq(1).attr('class') == "choose-current"){
+				let classData = "";
+				getClassData('memeber/coach/showWithPrivateCourse',date,classData,'.current-make-out',"1");
+			}
+		}
+	});
+	$(document).ready(function(){
+		// 判断用户是否是选择了门店，如果选择了门店那么就继续操作，如果没有选择门店则进入门店选择页面
+		if(needUrl != undefined){			
+			// 传入门店id获取对应门店数据
+			setTimeout(function(){
+				$.post(u+'store/storeInfo/get',{id:storeId},function(res){
+					// console.log(res,'111');
+					let datas = res.data,storesImg = res.data.bannerPic,dealImg = storesImg.split('|'),needImgData = "";
+					if(res.code == 200 && res.msg == '调用接口成功'){
+						$('.contend-abstract-title-info > img').attr('src',u + datas.logoPic);
+						$('.store-abstract').append(datas.name);
+						// 课程预约中选择的门店（现在的状态是写死）
+						$('.chose-store-select').append(datas.name);
+						for(let i in dealImg){
+							needImgData+='<div class="store-img-box"><img src="'+ u + dealImg[i] +'" /></div>';
+							$('.store-img').html(needImgData);
+						}
+					}else{
+						alert('请求超时，请检查网络');
+					}
+				});
+			},200);
+			
+			// 获取全部门店数据
+			setTimeout(function(){
+				$.post(u + 'store/storeInfo/listAll',{},function(storesAllData){
+					// console.log(storesAllData,'222');
+					let storesArr = storesAllData.page.rows,storesLen = storesArr.length,storesList = "";
+					if(storesAllData.code == 200 && storesAllData.msg == '返回数据成功'){
+						$('.contend-our-store-num').append(storesLen + '家门店');
+						// console.log(storesArr);
+						for(let s in storesArr){
+							storesList+='<li storesid="'+ storesArr[s].id +'">' + storesArr[s].name + '</li>';
+							$('.hide-store').html(storesList);
+						}
+					}
+				});
+			},800);
+			
+			$(".contend>li").eq(0).show().siblings().hide();
+			$(".footer-tabe>li").click(function () {
+				$(this).addClass("tbl-active").siblings().removeClass("tbl-active");
+				let index = $(this).index();
+				if(index == 1){
+					alert('活动中心正在开发中');
+				}else if(index == 2){
+					// 立即预约界面的全部数据操作
+					let now = new Date(),
+					choseTime = ''; // 获取用户选择的时间节点
+					time = now.getFullYear() + "-" +((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+"-"+(now.getDate()<10?"0":"")+now.getDate();  // 用户获取当前时间
+					$(".class-chose > p").eq(0).addClass("choose-current").siblings().removeClass("choose-current");
+					
+					if($(".class-chose > p").eq(0).text() == "团课"){
+						let classData = ""; // 获取团课的数据
+						getClassData('course/teamCourse/getTeamCourseByDay',time,classData,'.current-make-out',"0");
+					}
+					
+					// 用户点击团课或私教时颜色切换
+					$('.class-chose > p').click(function(){
+						$(this).addClass("choose-current").siblings().removeClass("choose-current");
+						let index = $(this).index();
+						if(index == 1){
+							let classData = "";
+							getClassData('memeber/coach/showWithPrivateCourse',time,classData,'.current-make-out',"1");
+						}else if(index == 0){
+							let classData = "";
+							getClassData('course/teamCourse/getTeamCourseByDay',time,classData,'.current-make-out',"0");
+						}
+					});
+					
+					// 用户点击私课时间节点的时候添加颜色
+					$('.am-share-sns').on('click','li',function(){
+						$(this).addClass("change-active").siblings().removeClass("change-active");
+						choseTime = $(this).children().text();
+					});
+					// 点击私教预约按钮弹出底部数据选择时间节点
+					$('.current-make-out').on('click','.private-lessons-count-btn',function(){
+						let courseid = $(this).attr('course-id'),timeData = "",titleTxt = " ";
+						if(choseData == ""){
+							titleTxt = '请选择'+time+'的私课时间';
+							$('.am-share-title').html(titleTxt);
+						}else{
+							titleTxt = '请选择'+choseData+'的私课时间';
+							$('.am-share-title').html(titleTxt);
+						}
+						
+						// 获取教练课程时间节点
+						$.post(u + 'memeber/coachcourse/showTimeByCourseId',{courseId:courseid},function(res){
+							let timePoint = res.data;
+							console.log(res);
+							for(let m in timePoint){
+								timeData+='<li><span>'+ timePoint[m].timePoint +'</span></li>';
+								$('.am-share-sns').html(timeData);
+							}
+						});
+						$(".am-share").addClass("am-modal-active");
+						if($(".sharebg").length>0){
+							$(".sharebg").addClass("sharebg-active");
+						}else{
+							$("body").append('<div class="sharebg"></div>');
+							$(".sharebg").addClass("sharebg-active");
+						}
+						$(".sharebg-active,.share_btn").click(function(){
+							$(".am-share").removeClass("am-modal-active");
+							$('.am-share-sns > li').removeClass("change-active");
+							setTimeout(function(){
+								$(".sharebg-active").removeClass("sharebg-active");	
+								$(".sharebg").remove();	
+							},300);
+						});
+						$('.sure_btn').one("click",function(event){
+							//console.log(storeData,'111');
+							//console.log(memberTokens,'用户唯一识别id');
+							if(storeData != null){
+								let url = 'member/applyCoachCourse';
+								memberTokens = storeData.map.memberToken; // 会员唯一识别码
+								if(choseData == ""){
+									let joinDayTime = time+' '+choseTime;
+									privateClassFun(url,memberTokens,courseid,joinDayTime,event);
+								}else{
+									let joinDayTime = choseData+' '+choseTime;
+									privateClassFun(url,memberTokens,courseid,joinDayTime,event);
+								}
+								$(".am-share").removeClass("am-modal-active");
+								$('.am-share-sns > li').removeClass("change-active");
+								setTimeout(function(){
+									$(".sharebg-active").removeClass("sharebg-active");	
+									$(".sharebg").remove();	
+								},300);
+							}else{
+								alert('请登录');
+								$(window).attr('location','/page/login.html');
+							}
+							
+						});
+					});
+						
+					// 团课预约按钮点击跳转详情页						
+					$('.current-make-out').on('click','.make-info-btn',function(){
+						let weekId = $(this).attr('week-id');
+						$(window).attr('location','/page/groupClassDetail.html?id='+weekId);
+					});
+					
+				}else if(index == 3){
+					// 个人中心
+					console.log(storeData,'111');
+					if(storeData != null){
+						memberTokens = storeData.map.memberToken; // 会员唯一识别码
+						$('.personal-center-top-img > span').css('display','none');
+						$('.exit').html('退出');
+						$('.personal-center-top-img > img').attr('src',u + storeData.map.memberInfo.headpic)
+						$('.personal-center-top > p').html('用户昵称：' + storeData.map.memberInfo.nickName);
+						$('.personal-center-info li').click(function(){
+							if($(this).attr('data-id') == 'info'){
+								alert('我的信息正在开发中');
+							}else if($(this).attr('data-id') == 'notice'){
+								alert('门店公告正在开发中');
+							}else if($(this).attr('data-id') == 'about-us'){
+								alert('关于我们正在开发中');
+							}else if($(this).attr('data-id') == 'make-record'){
+								$(window).attr('location','/page/makeRecord.html');
+							}
+						});
+						
+						// 点击退出按钮清空缓存数据
+						$('.exit').click(function(){
+							$.ajax({
+								// 请求头信息
+								headers:{
+									"Accept": "application/json",
+									"memberToken":memberTokens
+								},
+								// 请求方式
+								type:"POST",
+								// 请求属于同步还是异步
+								async:false,
+								// 预期服务器返回的数据类型，如果不指定，jQuery会根据响应包自动判断，一般我们直接设定为json
+								dataType:'json',
+								url:u + 'member/logout',
+								contentType : "application/x-www-form-urlencoded",
+								data:{},
+								success:function (res) {
+									console.log(res);
+									if(res.success){
+										alert('成功退出登录');
+										localStorage.clear(); // 清除缓存数据
+										$(window).attr('location','/page/login.html');
+									}
+								},
+								error:function(err) {
+									console.log(err,'失败返回');
+								},
+							});
+						});
+					}else{
+						$('.personal-center-top-img > img').css('display','none');
+						$('.exit').html('立即登录');
+						$('.personal-center-top > p').html('请登录');
+						$('.personal-center-info li').click(function(){
+							if($(this).attr('data-id') == 'info'){
+								alert('请登录');
+							}else if($(this).attr('data-id') == 'notice'){
+								alert('门店公告正在开发中');
+							}else if($(this).attr('data-id') == 'about-us'){
+								alert('关于我们正在开发中');
+							}else if($(this).attr('data-id') == 'make-record'){
+								alert('请登录');
+							}
+						});
+						$('.exit').click(function(){
+							$(window).attr('location','/page/login.html');
+						});
+					}
+				}
+				$(".contend>li").eq(index).show().siblings().hide();
+			});
+			
+			// 门店公告信息
+			$('.store-notice-img').click(function(){
+				alert('门店公告正在完善中');
+			});
+			
+			// 我的信息
+			$('.my-info-img').click(function(){
+				alert('我的信息模块正在完善中');
+			});
+			
+			// 点击查看详情
+			$('.store-details').click(function(){
+				alert('功能正在完善中');
+			});
+			
+			// 隐藏或显示私教课程详情
+			$(".current-make-out").on('click','.make-btn',function(){
+				$(this).parent().next().slideToggle("slow");
+			});
+			
+			// 隐藏或显示门店
+			$(".contend-our-store").click(function(){
+				$(".hide-store").slideToggle("slow");
+			});
+			
+			// 首页教练详情
+			$('.group-details').click(function(){
+				// alert('该功能正在完善开发中');
+				$(window).attr('location','/page/coachList.html?storeid='+storeId);
+			});
+		}else{
+			$(window).attr('location','/page/storeChose.html');
+		}
+	});
+	keyboardEvents();
+</script>
+</html>

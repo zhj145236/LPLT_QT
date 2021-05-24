@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>新用户注册</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/registered.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/rolldate.min.js"></script>
+</head>
+<body>
+	<form action="#" method="post" enctype="multipart/form-data">
+		<div class="registered-page-out">
+			<ul class="registered-page-box">
+				<li class="public-style registered-realName"><p>真实姓名：</p><input type="text" name="realName" class="realName samestyle" placeholder="请输入真实姓名" value="" /></li>
+				<li class="public-style registered-bornDate"><p>出生日期：</p><input type="text" id="date-group8-1" name="bornDate" class="bornDate samestyle" placeholder="请输入出生日期" value="" /></li>
+				<li class="public-style registered-tel"><p>联系方式：</p><input type="text" name="tel" class="tel samestyle" placeholder="请输入联系方式" value="" /></li>
+				<li class="public-style registered-email"><p>邮箱：</p><input type="text" name="email" class="email samestyle" placeholder="请输入邮箱" value="" /></li>
+				<li class="public-style registered-sex">
+					<p>性别：</p>
+					<label class="stores-product-lab"><input type="radio" name="sex" class="stores-product-inp" value="男" checked>男</label>
+					<label class="stores-product-lab"><input type="radio" name="sex" class="stores-product-inp" value="女">女</label>
+				</li>
+				<li class="public-style registered-headpic">
+					<p>个人头像：</p>
+					<div class="stores-show-img-upload-div">
+						<div class="stores-show-img-upload">+</div>
+						<input type="file" name="storesproduct" id="uploadProduct" />
+					</div>
+					<ul id="imageProduct"></ul>
+				</li>
+				<li class="public-style registered-nickName"><p>个人昵称：</p><input type="text" name="nickName" class="nickName samestyle" placeholder="请输入昵称" value="" /></li>
+				<li class="public-style registered-userName"><p>用户名：</p><input type="text" name="userName" class="userName samestyle" placeholder="请输入用户名" value="" /></li>
+				<li class="public-style registered-password"><p>密码：</p><input type="text" name="password" class="password samestyle" placeholder="请输入密码" value="" /></li>
+				<li class="public-style registered-tpassword"><p>确认密码：</p><input type="text" name="tpassword" class="tpassword samestyle" placeholder="请输入再次输入" value="" /></li>
+				<li class="public-style registered-address"><p>地址：</p><input type="text" name="address" class="address samestyle" placeholder="请输入地址" value="" /></li>
+				<li class="public-style registered-signature">
+					<p>个性签名：</p>
+					<textarea rows="3" maxlength="40" οnchange="this.value=this.value.substring(0, 40)" οnkeydοwn="this.value=this.value.substring(0, 40)" οnkeyup="this.value=this.value.substring(0, 40)" type="text" name="signature" class="signature samestyle" placeholder="个性签名(不能超过40字)"></textarea>
+				</li>
+			</ul>
+			<ul class="footer-btn-box">
+				<li class="footer-btn-sub">提交</li>
+				<li class="footer-btn-cancel">取消</li>
+			</ul>
+		</div>
+	</form>
+</body>
+<script>
+	$(document).ready(function(){
+		let u = getUrl();
+		// 日历
+		new Rolldate({
+			el: '#date-group8-1',
+			format: 'YYYY-MM-DD',
+			beginYear: 1960,
+			endYear: 2100,
+			confirm: function(date) {}
+		});
+		
+		$('.footer-btn-sub').click(function(){
+			// 获取用户填写的数据
+			let realNameVal = $("input[name='realName']").val(), // 真实姓名
+			bornDateVal = $("input[name='bornDate']").val(), // 出生年月
+			telVal = $("input[name='tel']").val(), // 联系方式
+			emailVal = $("input[name='email']").val(), // email
+			nickNameVal = $("input[name='nickName']").val(), // 昵称
+			sexVal = $('input[name="sex"]:checked').val(), // 性别
+			userNameVal = $("input[name='userName']").val(), // 用户名
+			passwordVal = $("input[name='password']").val(), // 密码
+			tpasswordVal = $("input[name='tpassword']").val(), // 确认密码
+			addressVal = $("input[name='address']").val(), // 地址
+			signatureVal = $('textarea[name="signature"]').val(), // 个性签名
+			imageProductSrc = $("#imageProduct .newLi").children('img').attr("src"), // 图像
+			dealProductSrc = "",
+			dealSubSexVal = '';
+			// 处理性别传值
+			if(sexVal == "男"){
+				dealSubSexVal = '1';
+			}else if(sexVal == "女"){
+				dealSubSexVal = '0';
+			}
+			// console.log(dealSubSexVal,'111');
+			if(imageProductSrc != undefined){
+				dealProductSrc = 'api' + imageProductSrc.split('api')[1]; // 处理后的教练图像
+			}else{
+				alert('图像不能为空');
+				return;
+			}
+			
+			if(realNameVal == "" || realNameVal == null || realNameVal == undefined){
+				alert('真实姓名不能为空');
+				return;
+			}
+			if(bornDateVal == "" || bornDateVal == null || bornDateVal == undefined){
+				alert('出生日期不能为空');
+				return;
+			}
+			if(telVal == "" || telVal == null || telVal == undefined){
+				alert('联系方式不能为空');
+				return;
+			}
+			// if(emailVal == "" || emailVal == null || emailVal == undefined){
+			// 	alert('邮箱不能为空');
+			// 	return;
+			// }
+			if(nickNameVal == "" || nickNameVal == null || nickNameVal == undefined){
+				alert('昵称不能为空');
+				return;
+			}
+			// if(sexVal == "" || sexVal == null || sexVal == undefined){
+			// 	alert('性别不能为空');
+			// 	return;
+			// }
+			if(userNameVal == "" || userNameVal == null || userNameVal == undefined){
+				alert('用户名不能为空');
+				return;
+			}
+			if(passwordVal == "" || passwordVal == null || passwordVal == undefined){
+				alert('密码不能为空');
+				return;
+			}
+			if(tpasswordVal == "" || tpasswordVal == null || tpasswordVal == undefined){
+				alert('请再次确认密码');
+				return;
+			}
+			if(passwordVal != tpasswordVal){
+				alert('两次输入的密码不同，请重新输入');
+				return;
+			}
+			// if(signatureVal == "" || signatureVal == null || signatureVal == undefined){
+			// 	alert('签名不能为空');
+			// 	return;
+			// }
+			$.ajax({
+				// 请求头信息
+				headers:{
+					"Accept": "application/json",
+				},
+				// 请求方式
+				type:"POST",
+				// 请求属于同步还是异步
+				async:false,
+				// 预期服务器返回的数据类型，如果不指定，jQuery会根据响应包自动判断，一般我们直接设定为json
+				dataType:'json',
+				url:u+"member/register",
+				contentType : "application/json",
+				data:JSON.stringify({
+					  "realName": realNameVal, // 真实姓名
+					  "bornDate": bornDateVal, // 出生日期
+					  "tel": telVal, // 联系方式
+					  "email": emailVal, // 邮箱
+					  "nickName": nickNameVal, // 昵称
+					  "sex": dealSubSexVal, // 性别
+					  "userName": userNameVal, // 用户名
+					  "password": passwordVal, // 密码
+					  "address": addressVal, // 地址
+					  "signature": signatureVal, // 签名
+					  "headpic": dealProductSrc, // 头像
+				}),
+				success:function (res) {
+					if(res.success){
+						alert('注册成功');
+						$(window).attr('location','/page/login.html');
+					}else{
+						console.log(res);
+						alert('注册失败');
+					}
+				},
+				error:function(err) {
+					console.log(err.status,'失败返回');
+				},
+		});
+		
+	});
+	
+	// 取消按钮
+	$('.footer-btn-cancel').click(function(){
+		$(window).attr('location','/page/login.html');
+	});
+	// 图片上传
+	uploadImg('uploadProduct','imageProduct',1);		
+	keyboardEvents();
+	});
+</script>
+</html>

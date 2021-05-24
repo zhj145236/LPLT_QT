@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background: #e6e7e7;
+}
+/* .class-detail-top{
+	background: #4D707A;
+	display: flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:center;
+	padding: 0 0 0 10px;
+	height: 50px;
+	line-height: 50px;
+}
+.class-detail-top-img{
+	width: 26px;
+	height: 26px;
+}
+.class-detail-top-img img{
+	display: block;
+	width: 100%;
+}
+.class-detail-top-text{
+	color: #FFFFFF;
+	margin-left: 8px;
+	font-size: 14px;
+} */
+/* 教练列表 */
+.coach-list-box{
+	padding: 10px;
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:space-between;
+	align-items:center;
+}
+.coach-list li{
+	width: 100%;
+	background: #FFFFFF;
+	text-align: left;
+	border-bottom: 1px solid #DEDEDE;
+}
+.coach-list-info{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:flex-start;
+	align-items:center;
+}
+.coach-list-img{
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 1px solid #DEDEDE;
+}
+.coach-list-img img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.coach-list-info-text .coach-list-info-title{
+	font-size: 14px;
+	font-weight: 600;
+}
+.coach-list-info-text .coach-list-info-count{
+	font-size: 14px;
+	color: #DEDEDE;
+}
+.coach-list-info-text{
+	margin-left: 10px;
+	width: 60%;
+}
+.coach-list-info-count{
+	margin-top: 6px;
+}
+.coach-list-info-next-page{
+	width: 26px;
+	height: 26px;
+	overflow: hidden;
+}
+.coach-list-info-next-page img{
+	width: 100%;
+	display: block;
+}

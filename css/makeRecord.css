@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background: #e6e7e7;
+	overflow-x: hidden;
+}
+.class-detail-top{
+	background: #4D707A;
+	display: flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:center;
+	padding: 0 0 0 10px;
+	height: 50px;
+	line-height: 50px;
+}
+.class-detail-top-img{
+	width: 26px;
+	height: 26px;
+}
+.class-detail-top-img img{
+	display: block;
+	width: 100%;
+}
+.class-detail-top-text{
+	color: #FFFFFF;
+	margin-left: 8px;
+	font-size: 14px;
+}
+/* 课程内容 */
+.class-info-out{
+	background: #FFFFFF;
+	margin: 10px 0;
+	width: 100%;
+}
+.class-info-box{
+	width: 90%;
+	margin:0 auto;
+	padding: 10px 0;
+	
+}
+.class-info-box p{
+	text-align: left;
+	font-size: 16px;
+	font-weight: 600;
+	border-bottom: 1px solid #DEDEDE;
+	padding: 10px 0;
+}
+.class-info-box p i{
+	color: #A7A7A7;
+	font-weight: normal;
+	margin-left: 5px;
+}

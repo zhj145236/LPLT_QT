@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	background: #e6e7e7;
+}
+/* .class-detail-top{
+	background: #4D707A;
+	display: flex;
+	flex-direction:row;
+	justify-content:flex-start;
+	align-items:center;
+	padding: 0 0 0 10px;
+	height: 50px;
+	line-height: 50px;
+}
+.class-detail-top-img{
+	width: 26px;
+	height: 26px;
+}
+.class-detail-top-img img{
+	display: block;
+	width: 100%;
+}
+.class-detail-top-text{
+	color: #FFFFFF;
+	margin-left: 8px;
+	font-size: 14px;
+} */
+/* 课程信息样式 */
+.class-info{
+	padding:10px;
+	border-bottom: 1px solid #dedede;
+	background: #FFFFFF;
+	margin-bottom: 10px;
+}
+.class-info-title{
+	font-size: 14px;
+	font-weight: 600;
+	text-align: left;
+}
+.class-info-time,.class-info-store,.class-info-add{
+	color: #dedede;
+	text-align: left;
+	font-size: 14px;
+}
+.class-info-time{
+	margin:10px 0;
+}
+/* 课程图片 */
+.class-img{
+	padding: 10px;
+	background: #FFFFFF;
+	border-top: 1px solid #dedede;
+	border-bottom: 1px solid #dedede;
+	margin-bottom: 10px;
+}
+.class-img-title{
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	text-align: left;
+}
+.class-img-content{
+	padding: 0 20px;
+}
+.class-img-box{
+	width: 100%;
+	margin: 0 auto 10px auto;
+}
+.class-img-box img{
+	width: 100%;
+	display: block;
+}
+/* 课程简介 */
+.class-Introduction{
+	padding: 10px;
+	background: #FFFFFF;
+	border-top: 1px solid #dedede;
+	border-bottom:  1px solid #dedede;
+}
+.class-Introduction-title{
+	font-size: 14px;
+	font-weight: 600;
+	text-align: left;
+}
+.class-Introduction-box{
+	text-align: left;
+	font-size: 14px;
+	color: #dedede;
+	padding: 10px 0;
+}
+/* 立即预约 */
+.immediately-make{
+	background: #FF9800;
+	font-size: 14px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	display: block;
+	color: #FFFFFF;
+	font-weight: 600;
+	height: 40px;
+	line-height: 40px;
+}

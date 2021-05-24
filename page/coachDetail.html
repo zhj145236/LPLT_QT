@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/coachDetail.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<title></title>
+</head>
+<body>	
+	<!-- 顶部 -->
+	<!-- <ul class="class-detail-top">
+		<li class="class-detail-top-img"><img src="../img/jt.png" /></li>
+		<li class="class-detail-top-text">教练详情</li>
+	</ul> -->
+	<div class="personal-center-box">
+		<div class="personal-center"></div>
+		<div class="personal-center-top">
+			<div class="personal-center-top-img"><img src="../img/yj.jpg" /></div>
+			<p></p>
+		</div>
+	</div>
+	<!-- 内容 -->
+	<ul class="proficient-class">
+		<li class="proficient-class-title">擅长</li>
+		<li class="proficient-class-count">
+			<p></p>
+		</li>
+	</ul>
+	<!-- 基本信息 -->
+	<ul class="basic-info">
+		<li class="basic-info-title">基本信息</li>
+		<li class="basic-info-count">
+			<div class="basic-info-count-img"><img src="../img/tel.png" /></div>
+			<div class="basic-info-count-tel">
+				<p class="basic-info-count-tel-txt">电话:</p>
+				<p class="basic-info-count-tel-num"></p>
+			</div>
+		</li>
+	</ul>
+	<!-- 工作经历 -->
+	<ul class="basic-info signature">
+		<li class="basic-info-title">我的签名</li>
+		<li class="signature-info-count"></li>
+	</ul>
+	<!-- 资质认证 -->	
+	<ul class="basic-info">
+		<li class="basic-info-title">资质认证</li>
+		<li class="basic-info-count">
+			<div class="qualification-info-count-img"><img src="" /></div>
+		</li>
+	</ul>
+	<!-- 工作经历 -->
+	<ul class="basic-info experience-info">
+		<li class="basic-info-title">工作经历</li>
+		<li class="experience-info-count"></li>
+	</ul>
+	<!-- 查看私课按钮 -->
+	<button class="view-class"></button>
+</body>
+<script>
+	let storeUrl = window.location.href,
+		needUrl = storeUrl.split('?')[1],
+		coachId = "",
+		storeid = "",
+		u = getUrl();
+		if(needUrl != undefined){
+			needCcoachidUrl = needUrl.split('&')[0]; // 教练id
+			coachId = needCcoachidUrl.split('=')[1];
+			needStoreidUrl = needUrl.split('&')[1];
+			storeid = needStoreidUrl.split('=')[1];
+		}else{
+			$(window).attr('location','/page/storeChose.html');
+		}
+		console.log(coachId);
+	// 获取教练的详细信息
+	$.post(u + 'memeber/coach/get',{id:coachId},function(res){
+		let coachData = res.data;
+		console.log(coachData);
+		if(res.code == 200 && res.msg == '调用接口成功'){
+			let skillData = coachData.skill;
+			$('.personal-center-top-img > img').attr('src',u + coachData.headpic);
+			// 资质认证
+			if(coachData.honor == ""){
+				$('.qualification-info-count-img').append('<p>暂未上传</p>');
+			}else{
+				$('.qualification-info-count-img > img').attr('src',u + coachData.honor);
+			}
+			// 工作经历
+			if(coachData.experience == ""){
+				$('.experience-info-count').append('该教练尚未填写工作经历');
+			}else{
+				$('.experience-info-count').append(coachData.experience);
+			}
+			$('.personal-center-top > p').append('教练名称：' + coachData.name);
+			$('.view-class').append('查看'+coachData.name+'的私课');
+			$('.basic-info-count-tel-num').append(coachData.tel);
+			$('.signature-info-count').append(coachData.signature);
+			
+			if(skillData.indexOf("，") >= 0 ) { // 检索字符串中是否有中文逗号
+				skillData = skillData.replace(/，/ig,','); // 将中文逗号转换成英文逗号
+			} 
+			let skillArr = skillData.split(','),skillArrData = "";
+			for(let i in skillArr){
+				skillArrData+='<p>'+ skillArr[i] +'</p>'
+				$('.proficient-class-count').html(skillArrData);
+			}
+		}
+	});
+	$('.class-detail-top-img').click(function(){
+		javascript:history.back(-1);
+	});
+	$('.view-class').click(function(){
+		$(window).attr('location','/page/privateMake.html?coachid=' + coachId + '&storeid=' + storeid);
+	});
+	keyboardEvents();
+</script>
+</html>

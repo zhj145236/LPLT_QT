@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	overflow: hidden;
+}
+.login-back{
+	background-image: url(../img/yj.jpg);
+	background-size:cover;
+	background-repeat:no-repeat;
+	position: fixed;
+	top: 0;
+}
+.show-login-img{
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
+}
+
+/*登陆页style，logo*/
+.out-log{
+	width: 100%;
+	margin:18% auto 0 auto;
+	position: fixed;
+	z-index: 1;
+}
+.logo-img{
+	width: 140px;
+	height:140px;
+	border-radius: 100%;
+	overflow: hidden;
+	margin:0 auto 20px auto;
+}
+.logo-img img{
+	width:100%;
+	height: 100%;
+}
+/*input style*/
+.user-inp,.pws-inp{
+	display: inline-block;
+	width: 100%;
+	outline:none;
+	border:0px;
+	text-indent:15px;
+	height: 40px;
+	line-height:20px;
+	background-color: rgba(0,0,0,0.3);
+	color: #fff;
+	cursor:pointer;
+}
+.inp-div{
+	color: #343434;
+	font-size: 14px;
+}
+.inp-div-p{
+	width:100%;
+	text-align: left;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+}
+.form-div{
+	width:70%;	
+	margin: auto;
+	background-color: rgba(255,255,255,0.4);
+	border: 1px solid #c6c6c6;
+	padding: 20px;
+}
+.sum-inp{
+	width: 46%;
+	outline:none;
+	border:0px;
+	margin: 20px auto 0 0;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: #FFFFFF;
+}
+.login-page{
+	border: 1px solid #1578ae;
+	background: rgba(21,120,174,0.5);
+}
+.register-page{
+	border: 1px solid #3E3E3E;
+	background: rgba(62,62,62,0.5);
+}

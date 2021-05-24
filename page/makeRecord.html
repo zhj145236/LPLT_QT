@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>预约记录</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/makeRecord.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+</head>
+<body>
+	<!-- 顶部 -->
+	<ul class="class-detail-top">
+		<li class="class-detail-top-img"><img src="../img/jt.png" /></li>
+		<li class="class-detail-top-text">我的预约记录</li>
+	</ul>
+	
+	<!-- 内容详情 -->
+	<ul class="class-info"></ul>
+	
+</body>
+<script>
+	let u = getUrl(),
+	storeData = JSON.parse(localStorage.getItem("userData")), // 获取用户登录数据
+	memberToken = "",
+	showData = "";
+	if(storeData != null){
+		memberToken = storeData.map.memberToken; // 会员唯一识别码
+	}else{
+		$(window).attr('location','/page/login.html');
+	}
+	if(storeData != undefined || storeData != null || storeData != ""){
+		$.ajax({
+			// 请求头信息
+			headers:{
+				"Accept": "application/json",
+				"memberToken":memberToken
+			},
+			// 请求方式
+			type:"POST",
+			// 请求属于同步还是异步
+			async:false,
+			// 预期服务器返回的数据类型，如果不指定，jQuery会根据响应包自动判断，一般我们直接设定为json
+			dataType:'json',
+			url:u + 'member/getBespeakRecord',
+			contentType : "application/x-www-form-urlencoded",
+			data:{},
+			success:function (res) {
+				let datas = res.data;
+				console.log(res);
+				if(datas.length != 0){
+					if(res.success){
+						for(let i in datas){
+							showData+='<div class="class-info-out">'
+							showData+='<li class="class-info-box">';
+							showData+='<p>课程名称：<i>'+ datas[i].courseName +'</i></p>';
+							showData+='<p>教练名称：<i>'+ datas[i].coachName +'</i></p>';
+							showData+='<p>教练电话：<i>'+ datas[i].tel +'</i></p>';
+							showData+='<p>预约时间：<i>'+ datas[i].createDate +'</i></p>';
+							showData+='<p>课程时间：<i>'+ datas[i].orderDate +'</i></p>';
+							showData+='<p>课程类型：<i>'+ datas[i].type +'</i></p>';
+							showData+='</li></div>';
+							$('.class-info').html(showData);
+						}
+					}
+				}else{
+					$('.class-info').html('暂无预约任何课程');
+				}
+			},
+			error:function(err) {
+				console.log(err,'失败返回');
+			},
+		});
+	}else{
+		$(window).attr('location','/page/login.html');
+	}
+	
+	// 点击按钮返回上一页
+	$('.class-detail-top-img').click(function(){
+		javascript:history.back(-1);
+	});
+	keyboardEvents();
+</script>
+</html>

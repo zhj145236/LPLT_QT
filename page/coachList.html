@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>教练列表</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/coachList.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+</head>
+<body>
+	<!-- 顶部 -->
+	<!-- <ul class="class-detail-top">
+		<li class="class-detail-top-img"><img src="../img/jt.png" /></li>
+		<li class="class-detail-top-text">教练列表</li>
+	</ul> -->
+	<!-- 教练列表 -->
+	<ul class="coach-list"></ul>
+</body>
+<script>
+	let storeUrl = window.location.href,
+		needUrl = storeUrl.split('?')[1],
+		storeId = "",
+		u = getUrl();
+		if(needUrl != undefined){
+			storeId = needUrl.split('=')[1]; // 门店id
+		}else{
+			$(window).attr('location','/page/storeChose.html');
+		}
+	// 获取门店对应教练
+	// 获取门店教练数据封装
+	function privateClass(getId){
+		$.ajax({
+			// 请求头信息
+			headers:{
+				"Accept": "application/json"
+			},
+			// 请求方式
+			type:"POST",
+			// 请求属于同步还是异步
+			async:false,
+			// 预期服务器返回的数据类型，如果不指定，jQuery会根据响应包自动判断，一般我们直接设定为json
+			dataType:'json',
+			url:u+"memeber/coach/list",
+			contentType : "application/json",
+			data:JSON.stringify({
+				"store_id":getId
+			}),
+			success:function (res) {
+				let coachListData = res.page.rows,coachList = "";
+				if(res.code == 200 && res.msg == '返回数据成功'){
+					for(let i in coachListData){
+						coachList+='<li coachid="'+ coachListData[i].id +'">';
+						coachList+='<div class="coach-list-box">';
+						coachList+='<div class="coach-list-info">';
+						coachList+='<div class="coach-list-img"><img src="'+ u + coachListData[i].headpic + '" /></div>';
+						coachList+='<div class="coach-list-info-text">';
+						coachList+='<p class="coach-list-info-title">'+ coachListData[i].name +'</p>';
+						coachList+='<p class="coach-list-info-count">'+ coachListData[i].signature +'</p>';
+						coachList+='</div></div>';
+						coachList+='<div class="coach-list-info-next-page"><img src="../img/jt2.png" /></div></div></li>';
+						$('.coach-list').html(coachList);
+					}
+				}
+			},
+			error:function(err) {
+				console.log(err.status,'失败返回');
+			},
+		});
+	}
+	privateClass(storeId);
+	
+	$('.coach-list>li').click(function(){
+		let coachid = $(this).attr('coachid');
+		$(window).attr('location','/page/coachDetail.html?coachid=' + coachid + '&storeid=' + storeId);
+	});
+	$('.class-detail-top-img').click(function(){
+		javascript:history.back(-1);
+	});
+	keyboardEvents();
+</script>
+</html>
